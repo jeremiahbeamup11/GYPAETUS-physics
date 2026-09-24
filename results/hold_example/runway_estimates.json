@@ -1,0 +1,8 @@
+{
+  "stall_speed_m_s": 61.93492122426233,
+  "liftoff_speed_m_s": 74.3219054691148,
+  "approach_speed_m_s": 80.51539759154103,
+  "takeoff_ground_roll_m": 131.24085241569276,
+  "landing_ground_roll_m": 1101.757353313641,
+  "assumption": "Constant representative takeoff acceleration; 50% weight on wheels; landing braking only; no obstacle, flare, slope, wind or safety factor; transonic-entry mass used"
+}

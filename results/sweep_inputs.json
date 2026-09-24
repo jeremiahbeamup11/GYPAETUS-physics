@@ -1,0 +1,122 @@
+{
+  "grid": {
+    "wing_areas_m2": [
+      0.08,
+      0.12,
+      0.18
+    ],
+    "rated_thrusts_n": [
+      300.0,
+      450.0,
+      600.0
+    ],
+    "fuel_masses_kg": [
+      1.0,
+      3.0
+    ],
+    "empty_masses_kg": [
+      18.0,
+      21.0
+    ],
+    "altitudes_m": [
+      0.0,
+      3000.0,
+      6000.0
+    ],
+    "drag_cases": [
+      "optimistic",
+      "baseline",
+      "pessimistic"
+    ]
+  },
+  "aircraft": {
+    "empty_mass_kg": 20,
+    "fuel_mass_kg": 3,
+    "wing_area_m2": 0.12,
+    "aspect_ratio": 3.0,
+    "oswald_efficiency": 0.75,
+    "cl_limit": 0.6,
+    "cl_max_landing": 1.2,
+    "trim_cd": 0.002,
+    "slenderness": 10.0,
+    "area_rule_factor": 1.0,
+    "q_limit_pa": 65000.0,
+    "flutter_review_q_pa": 40000.0,
+    "flutter_review_mach": 0.85
+  },
+  "engine": {
+    "sea_level_static_thrust_n": 450,
+    "tsfc_kg_n_s": 4e-05,
+    "installed_factor": 0.85,
+    "altitude_exponent": 0.75,
+    "propulsion_class": "turbojet",
+    "assist_fraction": 0.3
+  },
+  "mission": {
+    "altitude_m": 3000,
+    "start_mach": 0.8,
+    "target_mach": 1.0,
+    "gamma_deg": 0,
+    "throttle": 1.0,
+    "max_time_s": 120.0,
+    "max_step_s": 0.25,
+    "hold_mach": 1.01,
+    "hold_seconds": 5,
+    "force_margin_n": 0.01
+  },
+  "check_endurance": true,
+  "drag_polars": {
+    "optimistic": {
+      "name": "optimistic",
+      "cd0": 0.016,
+      "wave_peak_cd": 0.018,
+      "wave_onset_mach": 0.82,
+      "wave_peak_mach": 1.02,
+      "wave_width_mach": 0.16,
+      "reynolds_reference": 4000000.0,
+      "viscous_fraction": 0.65
+    },
+    "baseline": {
+      "name": "baseline",
+      "cd0": 0.022,
+      "wave_peak_cd": 0.035,
+      "wave_onset_mach": 0.78,
+      "wave_peak_mach": 1.02,
+      "wave_width_mach": 0.16,
+      "reynolds_reference": 4000000.0,
+      "viscous_fraction": 0.65
+    },
+    "pessimistic": {
+      "name": "pessimistic",
+      "cd0": 0.03,
+      "wave_peak_cd": 0.06,
+      "wave_onset_mach": 0.74,
+      "wave_peak_mach": 1.02,
+      "wave_width_mach": 0.16,
+      "reynolds_reference": 4000000.0,
+      "viscous_fraction": 0.65
+    }
+  },
+  "provenance": {
+    "python": "3.14.2",
+    "dependencies": {
+      "numpy": "2.4.1",
+      "scipy": "1.17.0",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2"
+    },
+    "source_sha256": {
+      "__init__.py": "58906ca20097a3885e527b3cc85ad7e39678945132e2d072cc7e127b7359345f",
+      "__main__.py": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+      "atmosphere.py": "50350e5b44fe7a69cde30d1cc38fb344616519489e70c93d0c2e82d3040565d1",
+      "cli.py": "f649c9e426efdfe034bc3450fa00ab633955398b9a11ae5d3a254000455937d3",
+      "constants.py": "6cd636b9a3f805cfb5c16d98bdbb9cc9c3656774741c3ee28fb127fef18f9833",
+      "estimates.py": "32c645caa548570c2b0766aad2baebf987c85b1b34e69253a146d6ba161e3369",
+      "models.py": "3504ba876582aaec5b6f22928fb3a5f2c98b6922f9fefdcbb3ed4adc6fda11e2",
+      "plots.py": "c3f0cd358aa1bbe91edb0f889ce167605933abe655e45d6993fbf1595312afbf",
+      "provenance.py": "9c4a8d7ef6894f54ccb52b9cfce57b5865f5aea44c5c1df32165668d880617a0",
+      "simulation.py": "3c4e4b812bd75dea51b7072a31ea64b3c2d581cfd468e1e15b09e48e6179d66c",
+      "sweep.py": "2fbe824445f0509ad76163ece88fe2cf0a3044e735d94b3107fa7b47d22eec19"
+    }
+  }
+}
