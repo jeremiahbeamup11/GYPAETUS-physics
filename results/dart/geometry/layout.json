@@ -1,0 +1,90 @@
+{
+  "layout": {
+    "name": "P550-dart-01",
+    "length_m": 2.4,
+    "case_diameter_m": 0.1786,
+    "engine_nominal_length_m": 0.419,
+    "engine_packaging_length_m": 0.427,
+    "engine_mass_kg": 5.4,
+    "mount_span_m": 0.23,
+    "inlet_highlight_diameter_m": 0.2,
+    "inlet_clear_diameter_m": 0.19,
+    "duct_outer_diameter_m": 0.194,
+    "aft_opening_diameter_m": 0.108,
+    "skin_allowance_m": 0.002,
+    "radial_clearance_m": 0.005,
+    "wing_area_m2": 0.08,
+    "wing_aspect_ratio": 3.0,
+    "wing_taper": 0.35,
+    "wing_sweep_deg": 50.0,
+    "wing_root_le_m": 0.8,
+    "wing_thickness_ratio": 0.04,
+    "fin_count": 4,
+    "fin_height_m": 0.08,
+    "fin_root_chord_m": 0.16,
+    "fin_tip_chord_m": 0.06,
+    "fin_root_le_m": 2.13,
+    "fin_sweep_deg": 40.0,
+    "fin_thickness_ratio": 0.04,
+    "tank_start_m": 0.3,
+    "tank_end_m": 0.95,
+    "tank_packing_fraction": 0.75,
+    "fuel_density_kg_m3": 800.0,
+    "fuel_ullage_fraction": 0.1
+  },
+  "metrics": {
+    "inlet_reference_area_m2": 0.031415926535897934,
+    "max_body_diameter_m": 0.248,
+    "max_body_frontal_area_m2": 0.048305128641596654,
+    "body_wetted_area_m2": 1.6813568531377612,
+    "exposed_wing_planform_m2": 0.03008316332701732,
+    "wing_wetted_area_m2": 0.06035885889932755,
+    "fin_planform_m2": 0.0352,
+    "fin_wetted_area_m2": 0.07062528000000001,
+    "tank_gross_volume_l": 5.681896137433279,
+    "tank_usable_fuel_kg": 4.09096521895196,
+    "min_packaging_radial_margin_m": 0.0,
+    "compensated_wave_area_m2": 0.004204553593531533,
+    "uncompensated_wave_area_m2": 0.005510130505896917,
+    "volume_m3": 0.09621944315342154,
+    "max_radius_over_length": 0.051666666666666666
+  },
+  "engine": {
+    "sea_level_static_thrust_n": 550.0,
+    "tsfc_kg_n_s": 3.9999999999999996e-05,
+    "installed_factor": 0.85,
+    "altitude_exponent": 0.75,
+    "propulsion_class": "turbojet",
+    "assist_fraction": 0.3,
+    "hardware_mass_kg": 5.4,
+    "model": "JetCat P550-PRO-S"
+  },
+  "mass_allocations_kg": {
+    "P550-PRO-S engine (manufacturer)": 5.4,
+    "body shell and frames (allocation)": 3.2,
+    "wing and fins (allocation)": 1.8,
+    "inlet and duct (allocation)": 1.2,
+    "mounts and thermal protection (allocation)": 1.0,
+    "tank and plumbing (allocation)": 0.8,
+    "avionics and actuators (allocation)": 0.8,
+    "battery and wiring (allocation)": 0.5,
+    "recovery equipment (allocation)": 1.0,
+    "fasteners and miscellaneous (allocation)": 0.5,
+    "unallocated reserve in 18 kg budget": 1.8
+  },
+  "uncertainty_envelopes": {
+    "optimistic": {
+      "wave_multiplier": 0.75,
+      "wave_onset": 0.85
+    },
+    "baseline": {
+      "wave_multiplier": 1.0,
+      "wave_onset": 0.8
+    },
+    "pessimistic": {
+      "wave_multiplier": 1.5,
+      "wave_onset": 0.75
+    }
+  },
+  "status": "Concept geometry and unvalidated component-drag screen; not a validated flight design"
+}

@@ -1,0 +1,22 @@
+{
+  "python": "3.14.2",
+  "dependencies": {
+    "numpy": "2.4.1",
+    "scipy": "1.17.0",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2"
+  },
+  "source_sha256": {
+    "__init__.py": "58906ca20097a3885e527b3cc85ad7e39678945132e2d072cc7e127b7359345f",
+    "__main__.py": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+    "atmosphere.py": "50350e5b44fe7a69cde30d1cc38fb344616519489e70c93d0c2e82d3040565d1",
+    "cli.py": "f649c9e426efdfe034bc3450fa00ab633955398b9a11ae5d3a254000455937d3",
+    "constants.py": "6cd636b9a3f805cfb5c16d98bdbb9cc9c3656774741c3ee28fb127fef18f9833",
+    "estimates.py": "32c645caa548570c2b0766aad2baebf987c85b1b34e69253a146d6ba161e3369",
+    "models.py": "3504ba876582aaec5b6f22928fb3a5f2c98b6922f9fefdcbb3ed4adc6fda11e2",
+    "plots.py": "c3f0cd358aa1bbe91edb0f889ce167605933abe655e45d6993fbf1595312afbf",
+    "provenance.py": "9c4a8d7ef6894f54ccb52b9cfce57b5865f5aea44c5c1df32165668d880617a0",
+    "simulation.py": "3c4e4b812bd75dea51b7072a31ea64b3c2d581cfd468e1e15b09e48e6179d66c",
+    "sweep.py": "2fbe824445f0509ad76163ece88fe2cf0a3044e735d94b3107fa7b47d22eec19"
+  }
+}

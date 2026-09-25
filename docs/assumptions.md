@@ -204,3 +204,50 @@ computed table; never hand-edit that conclusion to claim a pass. The supplied
 fresh-kernel script clears old outputs and fails on any cell error. Do not replace
 missing empirical inputs with authoritative-looking constants.
 
+## 9. Targeted four-candidate audit
+
+The original grid is retained as historical evidence, not enlarged. The follow-up
+notebook `notebooks/four_candidate_stress.ipynb` audits D0027/D0030/D0033/D0036 only,
+with S=0.08 m², 600 N bench rating, 6 km altitude and the same five-second Mach 1.01
+hold. The three original drag families are retained.
+
+Installation factors 0.85/0.80/0.75 mean **total** losses of 15/20/25 percent,
+applied once to the altitude/Mach thrust map. The original 15% is not applied
+again. Fuel flow at fixed throttle is unchanged by installation loss.
+
+The user authorized explicit sensitivity assumptions because no frontal area or
+component polar is available. `FixedBodyPolar` assigns 50% of parasite and wave
+drag at the original default 0.12 m² anchor to fixed body/inlet/external-engine
+geometry. Its equivalent drag area is held fixed at S=0.08 m². The other share
+scales with the wing. A fixed 0.20 m anchor Reynolds length keeps non-wing drag
+independent of wing chord. Induced drag and trim CD retain their original models.
+The model also exports the critical allocation and permissible extra Cd×A, so
+the conclusion need not rest only on the selected 50% allocation.
+
+This is an allocation assumption, not a known physical frontal area. Changing
+the reference area alone would not change physical drag; this audit instead
+removes the assumption that all non-wing drag shrinks with the wing. At the
+anchor geometry the new model equals the old one; no component is counted twice.
+No second ram-drag or inlet-loss subtraction is applied to engine net thrust.
+
+The full-interval entry-mass force audit is separate from actual flight paths.
+A second bound uses empty mass with available thrust solely as an optimistic
+lower-drag bound, not as a fuel-free flight. If that bound is negative, fuel burn
+cannot rescue the force balance. Failed integrations remain truncated; their
+path minima must not be relabeled as negative beyond an unreached Mach.
+
+The fixed-body assumption eliminates the four pessimistic-case passes at all
+three losses; optimistic and baseline passes survive. At 20% loss with the
+original drag scaling, gate and endurance results diverge: the gate passes, but
+the hold condition cannot be reached within the fuel/time budget. The hold
+requirement remains five seconds. See `results/stress/REPORT.md` for the numerical
+evidence and the explicitly qualified robustness conclusion.
+
+## Current P550 geometry gate
+
+The current model and its fixed body/inlet/nozzle, exposed wing/tail, and wave
+terms are documented in [dart_geometry.md](dart_geometry.md). The only current
+force cases are the four existing mass IDs at three installation losses, anchored
+to the P550-PRO-S 550 N / 5.4 kg / 0.144 kg/N/h specifications. Only the wave term
+varies across uncertainty envelopes. Negative force branches are not integrated.
+The previous 600 N sweep and stress results remain historical evidence.

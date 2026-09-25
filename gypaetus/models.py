@@ -84,6 +84,15 @@ class DragPolar:
             shape = 0.65 + 0.35 * math.exp(-((mach - self.wave_peak_mach) / self.wave_width_mach) ** 2)
         return self.wave_peak_cd * shape * aircraft.area_rule_factor * (10 / aircraft.slenderness) ** 2
 
+    def parasite_cd(self, reynolds: float, aircraft: Aircraft) -> float:
+        """Wing-referenced parasite coefficient; subclasses can retain fixed body drag area."""
+        return self.cd0 * (1 - self.viscous_fraction + self.viscous_fraction * (reynolds / self.reynolds_reference) ** -0.2)
+
+    def profile_drag_areas(self, mach, reynolds, aircraft):
+        """Dimensional Cd*A interface; keeps fixed geometry independent of Sref."""
+        return dict(parasite_drag_area_m2=aircraft.wing_area_m2 * self.parasite_cd(reynolds, aircraft),
+                    wave_drag_area_m2=aircraft.wing_area_m2 * self.wave_cd(mach, aircraft))
+
 
 DRAG_CASES = {
     "optimistic": DragPolar("optimistic", 0.016, 0.018, 0.82),
@@ -168,10 +177,12 @@ def aerodynamic_state(aircraft: Aircraft, polar: DragPolar, speed_m_s: float,
     cl = mass_kg * G0 * math.cos(gamma_rad) / (q * aircraft.wing_area_m2)
     reynolds = atm.density_kg_m3 * speed_m_s * aircraft.chord_m / atm.viscosity_pa_s
     # Turbulent Re^-1/5 sensitivity applied ONLY to the viscous share of Cd0.
-    cd_parasite = polar.cd0 * (1 - polar.viscous_fraction + polar.viscous_fraction * (reynolds / polar.reynolds_reference) ** -0.2)
+    areas = polar.profile_drag_areas(mach, reynolds, aircraft)
+    cd_parasite = areas['parasite_drag_area_m2'] / aircraft.wing_area_m2
     cd_induced = cl ** 2 / (math.pi * aircraft.oswald_efficiency * aircraft.aspect_ratio)
-    cd_wave = polar.wave_cd(mach, aircraft)
+    cd_wave = areas['wave_drag_area_m2'] / aircraft.wing_area_m2
     cd = cd_parasite + cd_induced + cd_wave + aircraft.trim_cd
     return dict(mach=mach, q_pa=q, cl=cl, reynolds=reynolds, cd_parasite=cd_parasite,
                 cd_induced=cd_induced, cd_wave=cd_wave, cd_total=cd,
-                drag_n=q * aircraft.wing_area_m2 * cd)
+                drag_n=q * aircraft.wing_area_m2 * cd, **areas,
+                **{key.replace('_area_m2', '_n'): q * value for key, value in areas.items()})

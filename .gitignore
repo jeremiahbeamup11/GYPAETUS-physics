@@ -8,3 +8,6 @@ __pycache__/
 build/
 dist/
 
+# Local reference downloads and rendering scratch; sources are linked in docs.
+tmp/
+reference/geometry/*.pdf

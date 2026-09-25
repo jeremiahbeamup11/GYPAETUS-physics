@@ -1,0 +1,78 @@
+{
+  "candidates": {
+    "D0027": [
+      18.0,
+      1.0
+    ],
+    "D0030": [
+      21.0,
+      1.0
+    ],
+    "D0033": [
+      18.0,
+      3.0
+    ],
+    "D0036": [
+      21.0,
+      3.0
+    ]
+  },
+  "wing_area_m2": 0.08,
+  "rated_thrust_n": 600,
+  "mission": {
+    "altitude_m": 6000,
+    "start_mach": 0.8,
+    "target_mach": 1.0,
+    "gamma_deg": 0.0,
+    "throttle": 1.0,
+    "max_time_s": 120.0,
+    "max_step_s": 0.25,
+    "hold_mach": 1.01,
+    "hold_seconds": 5,
+    "force_margin_n": 0.01
+  },
+  "total_installation_factors": [
+    0.85,
+    0.8,
+    0.75
+  ],
+  "body_area_assumption": {
+    "name": "pessimistic",
+    "cd0": 0.03,
+    "wave_peak_cd": 0.06,
+    "wave_onset_mach": 0.74,
+    "wave_peak_mach": 1.02,
+    "wave_width_mach": 0.16,
+    "reynolds_reference": 4000000.0,
+    "viscous_fraction": 0.65,
+    "anchor_area_m2": 0.12,
+    "anchor_aspect_ratio": 3.0,
+    "fixed_body_fraction": 0.5
+  },
+  "geometry_status": "No actual frontal area or component polar supplied; fixed equivalent drag area allocation is a sensitivity assumption.",
+  "original_grid_status": "Unchanged; only D0027/D0030/D0033/D0036 evaluated.",
+  "provenance": {
+    "python": "3.14.2",
+    "dependencies": {
+      "numpy": "2.4.1",
+      "scipy": "1.17.0",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2"
+    },
+    "source_sha256": {
+      "__init__.py": "58906ca20097a3885e527b3cc85ad7e39678945132e2d072cc7e127b7359345f",
+      "__main__.py": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+      "atmosphere.py": "50350e5b44fe7a69cde30d1cc38fb344616519489e70c93d0c2e82d3040565d1",
+      "cli.py": "f649c9e426efdfe034bc3450fa00ab633955398b9a11ae5d3a254000455937d3",
+      "constants.py": "6cd636b9a3f805cfb5c16d98bdbb9cc9c3656774741c3ee28fb127fef18f9833",
+      "estimates.py": "32c645caa548570c2b0766aad2baebf987c85b1b34e69253a146d6ba161e3369",
+      "models.py": "6508f8caf9e9ef91e6c0304eae88c3f16850c7103d908f45c69c724658518906",
+      "plots.py": "c3f0cd358aa1bbe91edb0f889ce167605933abe655e45d6993fbf1595312afbf",
+      "provenance.py": "9c4a8d7ef6894f54ccb52b9cfce57b5865f5aea44c5c1df32165668d880617a0",
+      "simulation.py": "3c4e4b812bd75dea51b7072a31ea64b3c2d581cfd468e1e15b09e48e6179d66c",
+      "stress.py": "cd8beaa804ee19d9156fa29d7da29f02903565862ee4df5af4fce8f3af9381e4",
+      "stress_report.py": "9d57eb5678cb1f66306e296a5243f6eeaa01e79d17fd7f3b915cc81d170fa8a9",
+      "sweep.py": "2fbe824445f0509ad76163ece88fe2cf0a3044e735d94b3107fa7b47d22eec19"
+    }
+  }
+}

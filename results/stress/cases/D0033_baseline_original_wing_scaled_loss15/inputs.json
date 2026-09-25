@@ -1,0 +1,47 @@
+{
+  "aircraft": {
+    "empty_mass_kg": 18.0,
+    "fuel_mass_kg": 3.0,
+    "wing_area_m2": 0.08,
+    "aspect_ratio": 3.0,
+    "oswald_efficiency": 0.75,
+    "cl_limit": 0.6,
+    "cl_max_landing": 1.2,
+    "trim_cd": 0.002,
+    "slenderness": 10.0,
+    "area_rule_factor": 1.0,
+    "q_limit_pa": 65000.0,
+    "flutter_review_q_pa": 40000.0,
+    "flutter_review_mach": 0.85
+  },
+  "engine": {
+    "sea_level_static_thrust_n": 600,
+    "tsfc_kg_n_s": 4e-05,
+    "installed_factor": 0.85,
+    "altitude_exponent": 0.75,
+    "propulsion_class": "turbojet",
+    "assist_fraction": 0.3
+  },
+  "polar": {
+    "name": "baseline",
+    "cd0": 0.022,
+    "wave_peak_cd": 0.035,
+    "wave_onset_mach": 0.78,
+    "wave_peak_mach": 1.02,
+    "wave_width_mach": 0.16,
+    "reynolds_reference": 4000000.0,
+    "viscous_fraction": 0.65
+  },
+  "mission": {
+    "altitude_m": 6000,
+    "start_mach": 0.8,
+    "target_mach": 1.0,
+    "gamma_deg": 0.0,
+    "throttle": 1.0,
+    "max_time_s": 120.0,
+    "max_step_s": 0.25,
+    "hold_mach": 1.01,
+    "hold_seconds": 5,
+    "force_margin_n": 0.01
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "layout": {
+    "name": "P550-dart-01",
+    "length_m": 2.4,
+    "case_diameter_m": 0.1786,
+    "engine_nominal_length_m": 0.419,
+    "engine_packaging_length_m": 0.427,
+    "engine_mass_kg": 5.4,
+    "mount_span_m": 0.23,
+    "inlet_highlight_diameter_m": 0.2,
+    "inlet_clear_diameter_m": 0.19,
+    "duct_outer_diameter_m": 0.194,
+    "aft_opening_diameter_m": 0.108,
+    "skin_allowance_m": 0.002,
+    "radial_clearance_m": 0.005,
+    "wing_area_m2": 0.08,
+    "wing_aspect_ratio": 3.0,
+    "wing_taper": 0.35,
+    "wing_sweep_deg": 50.0,
+    "wing_root_le_m": 0.8,
+    "wing_thickness_ratio": 0.04,
+    "fin_count": 4,
+    "fin_height_m": 0.08,
+    "fin_root_chord_m": 0.16,
+    "fin_tip_chord_m": 0.06,
+    "fin_root_le_m": 2.13,
+    "fin_sweep_deg": 40.0,
+    "fin_thickness_ratio": 0.04,
+    "tank_start_m": 0.3,
+    "tank_end_m": 0.95,
+    "tank_packing_fraction": 0.75,
+    "fuel_density_kg_m3": 800.0,
+    "fuel_ullage_fraction": 0.1
+  },
+  "mission": {
+    "altitude_m": 6000,
+    "start_mach": 0.8,
+    "target_mach": 1.0,
+    "gamma_deg": 0.0,
+    "throttle": 1.0,
+    "max_time_s": 120.0,
+    "max_step_s": 0.25,
+    "hold_mach": 1.01,
+    "hold_seconds": 5,
+    "force_margin_n": 0.01
+  },
+  "candidates": {
+    "D0027": [
+      18.0,
+      1.0
+    ],
+    "D0030": [
+      21.0,
+      1.0
+    ],
+    "D0033": [
+      18.0,
+      3.0
+    ],
+    "D0036": [
+      21.0,
+      3.0
+    ]
+  },
+  "installation_factors": [
+    0.85,
+    0.8,
+    0.75
+  ],
+  "engine": {
+    "sea_level_static_thrust_n": 550.0,
+    "tsfc_kg_n_s": 3.9999999999999996e-05,
+    "installed_factor": 0.85,
+    "altitude_exponent": 0.75,
+    "propulsion_class": "turbojet",
+    "assist_fraction": 0.3,
+    "hardware_mass_kg": 5.4,
+    "model": "JetCat P550-PRO-S"
+  },
+  "wave_envelopes": {
+    "optimistic": {
+      "wave_multiplier": 0.75,
+      "wave_onset": 0.85
+    },
+    "baseline": {
+      "wave_multiplier": 1.0,
+      "wave_onset": 0.8
+    },
+    "pessimistic": {
+      "wave_multiplier": 1.5,
+      "wave_onset": 0.75
+    }
+  },
+  "component_models": {
+    "optimistic": {
+      "name": "optimistic",
+      "body_length_m": 2.4,
+      "body_wetted_m2": 1.6813568531377612,
+      "wing_wetted_m2": 0.06035885889932755,
+      "fin_wetted_m2": 0.07062528000000001,
+      "wing_chord_m": 0.16329931618554522,
+      "fin_chord_m": 0.11,
+      "inlet_area_m2": 0.031415926535897934,
+      "geometry_wave_area_m2": 0.004204553593531533,
+      "viscous_multiplier": 1.15,
+      "external_pressure_cd": 0.05,
+      "wave_multiplier": 0.75,
+      "wave_onset": 0.85
+    },
+    "baseline": {
+      "name": "baseline",
+      "body_length_m": 2.4,
+      "body_wetted_m2": 1.6813568531377612,
+      "wing_wetted_m2": 0.06035885889932755,
+      "fin_wetted_m2": 0.07062528000000001,
+      "wing_chord_m": 0.16329931618554522,
+      "fin_chord_m": 0.11,
+      "inlet_area_m2": 0.031415926535897934,
+      "geometry_wave_area_m2": 0.004204553593531533,
+      "viscous_multiplier": 1.15,
+      "external_pressure_cd": 0.05,
+      "wave_multiplier": 1.0,
+      "wave_onset": 0.8
+    },
+    "pessimistic": {
+      "name": "pessimistic",
+      "body_length_m": 2.4,
+      "body_wetted_m2": 1.6813568531377612,
+      "wing_wetted_m2": 0.06035885889932755,
+      "fin_wetted_m2": 0.07062528000000001,
+      "wing_chord_m": 0.16329931618554522,
+      "fin_chord_m": 0.11,
+      "inlet_area_m2": 0.031415926535897934,
+      "geometry_wave_area_m2": 0.004204553593531533,
+      "viscous_multiplier": 1.15,
+      "external_pressure_cd": 0.05,
+      "wave_multiplier": 1.5,
+      "wave_onset": 0.75
+    }
+  },
+  "force_case_count": 12,
+  "trajectory_count": 0,
+  "old_grid_rerun": false,
+  "provenance": {
+    "python": "3.14.2",
+    "dependencies": {
+      "numpy": "2.4.1",
+      "scipy": "1.17.0",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2"
+    },
+    "source_sha256": {
+      "__init__.py": "58906ca20097a3885e527b3cc85ad7e39678945132e2d072cc7e127b7359345f",
+      "__main__.py": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+      "atmosphere.py": "50350e5b44fe7a69cde30d1cc38fb344616519489e70c93d0c2e82d3040565d1",
+      "cli.py": "f649c9e426efdfe034bc3450fa00ab633955398b9a11ae5d3a254000455937d3",
+      "constants.py": "6cd636b9a3f805cfb5c16d98bdbb9cc9c3656774741c3ee28fb127fef18f9833",
+      "dart.py": "5360133e8ca3c5cb207a592dcc2330565c0593efdf52aa3af27e3d1abc9115ca",
+      "dart_report.py": "7c09952503a4dffe83eb33935832a22488f094555d72d56f73f13383abc440ec",
+      "estimates.py": "32c645caa548570c2b0766aad2baebf987c85b1b34e69253a146d6ba161e3369",
+      "models.py": "8171bfc82411e052a6a0da7441a16fcbaf0e81799a3cb1964f078213105fda94",
+      "plots.py": "c3f0cd358aa1bbe91edb0f889ce167605933abe655e45d6993fbf1595312afbf",
+      "provenance.py": "9c4a8d7ef6894f54ccb52b9cfce57b5865f5aea44c5c1df32165668d880617a0",
+      "simulation.py": "3c4e4b812bd75dea51b7072a31ea64b3c2d581cfd468e1e15b09e48e6179d66c",
+      "stress.py": "cd8beaa804ee19d9156fa29d7da29f02903565862ee4df5af4fce8f3af9381e4",
+      "stress_report.py": "9d57eb5678cb1f66306e296a5243f6eeaa01e79d17fd7f3b915cc81d170fa8a9",
+      "sweep.py": "2fbe824445f0509ad76163ece88fe2cf0a3044e735d94b3107fa7b47d22eec19"
+    }
+  }
+}

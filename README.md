@@ -8,6 +8,33 @@ notebook, a Python package, a command-line runner, parameter sweeps, and tests.
 maps are illustrative surrogates, not measured aircraft data. A numerical pass
 identifies a combination to investigate; it does not establish a buildable design.
 
+**Current gate: the locked P550 dart fails all 12 force-balance rows, including
+baseline at 15% installation loss.** See [the force table and report](results/dart/REPORT.md)
+and [the executed P550 notebook](notebooks/p550_dart.ipynb). The engine is 550 N;
+only wave drag has optimistic/baseline/pessimistic assumptions. All branches have
+negative force margin, so no trajectories qualify. The geometry and pressure/wave
+closures remain preliminary; the 18/21 kg empty masses are conditional budgets.
+
+```sh
+python -m gypaetus.dart_report --output results/dart
+python -m jupyterlab notebooks/p550_dart.ipynb
+```
+
+The historical sweep commands below reproduce the earlier model. They are not
+the next design step; do not run that grid to bypass the current gate.
+
+**Earlier gate: the four apparent all-polar candidates fail the pessimistic fixed-body
+stress test.** See [the targeted report](results/stress/REPORT.md) and
+[four-candidate notebook](notebooks/four_candidate_stress.ipynb).
+The original 324-case results below are retained for comparison. The stress test
+does not add any aircraft configurations: it audits D0027/D0030/D0033/D0036 with
+explicit body-drag allocation and 15–25% total installation losses. At 20% loss,
+the original pessimistic cases reach Mach 1 but do not complete the required hold.
+
+```sh
+python scripts/execute_notebook.py notebooks/four_candidate_stress.ipynb
+```
+
 ## Run it
 
 To browse the existing results without installing anything, open

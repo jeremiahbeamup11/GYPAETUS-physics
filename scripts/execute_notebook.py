@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
 import json
+import argparse
 
 import nbformat
 from nbclient import NotebookClient
@@ -12,7 +13,10 @@ from nbclient import NotebookClient
 
 def main():
     root = Path(__file__).resolve().parents[1]
-    path = root / "notebooks" / "design_gate.ipynb"
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("notebook", nargs="?", default="notebooks/design_gate.ipynb")
+    args = parser.parse_args()
+    path = (root / args.notebook).resolve()
     notebook = nbformat.read(path, as_version=4)
     for cell in notebook.cells:
         if cell.cell_type == "code":
@@ -41,4 +45,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
